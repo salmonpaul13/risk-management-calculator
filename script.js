@@ -10,9 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
     calculateButton.addEventListener("click", calculateLots);
     setDefaultsButton.addEventListener("click", setDefaultValues);
 
+    // Add event listeners to input fields
+    capitalInput.addEventListener("keydown", handleEnterKey);
+    lossPercentageInput.addEventListener("keydown", handleEnterKey);
+    lotSizeInput.addEventListener("keydown", handleEnterKey);
+    stopLossPointsInput.addEventListener("keydown", handleEnterKey);
+
     populateInputsFromLocalStorage(); // Populate inputs on page load
     calculateLots(); // Calculate initially
 });
+
+function handleEnterKey(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent default form submission behavior
+        calculateLots();
+        // Move focus to the stopLossPointsInput field
+        document.getElementById("stopLossPoints").focus();
+    }
+}
 
 function setDefaultValues() {
     const capitalInput = document.getElementById("capital");
