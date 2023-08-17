@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Risk Management Calculator</h1>
+        <label for="capital">Capital:</label>
+        <input type="number" id="capital" min="0" step="any">
+        <br>
+        <label for="lossPercentage">Loss Percentage per Trade:</label>
+        <input type="number" id="lossPercentage" min="0" step="any">
+        <br>
+        <label for="lotSize">Lot Size:</label>
+        <input type="number" id="lotSize" min="0" step="1">
+        <br>
+        <label for="stopLossPoints">Stop Loss Points:</label>
+        <input type="number" id="stopLossPoints" min="0" step="any">
+        <br>
+        <button id="calculate">Calculate</button>
+        <p>Number of Lots to Buy: <span id="lots"></span></p>
+        <button id="setDefaults">Set Defaults</button>
+    </div>
+</body>
+</html>
